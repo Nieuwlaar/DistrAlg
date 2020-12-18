@@ -1,16 +1,41 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
 # Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+
+def broadcast(round, v):
+    pass
+
+
+class Node(object):
+    def __init__(self, i, address):
+        self.i = i
+        self.address = address
+        print(i)
+        address = 12345+i
+        print(address)
+
+
+
+def initializeNodes(total_nodes, failed_nodes):
+    i = 1
+    nodes = []
+    starting_port = 12345
+    while i < total_nodes:
+        nodes.append(Node(i, starting_port+i))
+
+        i = i + 1
+
+    # print(nodes[])
+
+
+if __name__ == '__main__':
+    # parameters:
+    total_nodes = 7  # number of processors
+    failed_nodes = 1  # number of failures
+    initializeNodes(total_nodes, failed_nodes)
+
+    round = 1
+    decided = False
+    v = True  # binary input value (attack or defence in byzantine generals problem)
+    # while True:
+    #     broadcast(round, v)  # notification
